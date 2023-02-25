@@ -36,6 +36,7 @@
 
 /*==========================================================================================*/
 /* Page PastEvents */
+/* Este div contiene todo el from*/
 
 
 .d-img {
@@ -50,6 +51,12 @@
 
 /*==========================================================================================*/
 /* Page Contact */
+.first-container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    min-height: 100vh;
+}
 
 
 
