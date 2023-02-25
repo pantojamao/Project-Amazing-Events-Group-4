@@ -46,8 +46,6 @@
 
 /*==========================================================================================*/
 /* Page PastEvents */
-/* Este div contiene todo el from*/
-
 
 .d-img {
     height: 100%;
@@ -61,6 +59,7 @@
 
 /*==========================================================================================*/
 /* Page Contact */
+
 .first-container{
     display: flex;
     flex-direction: column;
@@ -69,46 +68,46 @@
     min-height: 100vh;
 }
 
-
-  
-  
-
 /*==========================================================================================*/
 /* Page Details */
-/*Se agrega el border Sombreado al contenedor padre*/
+
+/* The Shaded border is added to the parent container */
 .container {
     border: 2px solid rgb(19, 17, 17);
     box-shadow: 3px 3px 6px rgba(241, 143, 143, 0.5);
     border-radius: 10px;
-  }
+}
+
 .title{
     text-align: justify;
     font-size: 14px;
 }
+
 .img-1{
     width: 100vh;
     border-left: 0px solid black;
     border-top: 0px solid black;
     box-shadow: -10px -5px 10px rgba(0, 0, 0, 0.5);
 }
+
 @media only screen and (min-width: 992px) {
     .title {
-      font-size: 23px;
-  justify-content: left;
-  margin-top: 3px;
+        font-size: 23px;
+        justify-content: left;
+        margin-top: 3px;
     }
-  }
+}
+
 @media only screen and (max-width: 320px) and (max-height: 570px) {
     .title {
-      font-size: 11px;
+        font-size: 11px;
     }
-  }
+}
 
-  .container-text h6{
+/* Este div contiene todo el from*/
+.container-text h6{
     color:white
-    
-
-  }
+}
 
 /*==========================================================================================*/
 /* Page Stats */
