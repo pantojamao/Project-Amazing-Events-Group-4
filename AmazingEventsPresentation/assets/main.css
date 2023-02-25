@@ -21,6 +21,16 @@
     width: 10%;
 }
 
+.button-Shadow {
+    box-shadow: 5px 5px 3px black;
+}
+
+.button-Shadow:hover {
+    margin-top: 4px;
+    margin-left: 4px;
+    box-shadow: 0px 0px 0px black;
+}
+
 /*==========================================================================================*/
 /* Page Home */
 
@@ -54,6 +64,7 @@
 .first-container{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     height: 100vh;
     min-height: 100vh;
 }
