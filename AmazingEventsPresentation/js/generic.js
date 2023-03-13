@@ -157,8 +157,10 @@ const eventos = {
         }
     ]
 }
-// Crear los elementos correspondientes de pastEvents.html
-function createCardDiv(pastCardImage, pastCardName, pastCardDescription, pastCardPrice) {
+const fechaActualTimestamp = new Date('2022-01-01').getTime();
+
+// Crear las etiquetas correspondientes de Events.html
+function createCardDiv(CardImage, CardName, CardDescription, CardPrice) {
     const cardDiv = document.createElement('div');
     const card = document.createElement('div');
     const img = document.createElement('img');
@@ -179,11 +181,11 @@ function createCardDiv(pastCardImage, pastCardName, pastCardDescription, pastCar
 
     // se agrego  los atributos que contenian las etiquetas en el html
     card.style.width = "18rem";
-    img.src = pastCardImage;
+    img.src = CardImage;
     img.alt = 'weddings';
-    title.textContent = pastCardName;
-    description.textContent = pastCardDescription;
-    price.textContent = `Price: ${pastCardPrice}`;
+    title.textContent = CardName;
+    description.textContent = CardDescription;
+    price.textContent = `Price: ${CardPrice}`;
     detailsLink.href = './details.html';
     detailsLink.textContent = 'Details';
 
@@ -196,22 +198,8 @@ function createCardDiv(pastCardImage, pastCardName, pastCardDescription, pastCar
     card.appendChild(cardBody);
     cardDiv.appendChild(card);
 
-    const container = document.querySelector('.container');
-    return container.appendChild(cardDiv);
+    return cardDiv;
 }
 
-const fechaActual = new Date('2022-01-01');
-const timestamp = fechaActual.getTime();
 
-function addPastEvents() {
-    const eventosPasados = eventos.eventos.filter(evento => new Date(evento.date).getTime() < fechaActual);
-    for (let i = 0; i < eventosPasados.length; i++) {
-        let pastCardImage = eventosPasados[i].img;
-        let pastCardName = eventosPasados[i].name;
-        let pastCardDescription = eventosPasados[i].description;
-        let pastCardPrice = eventosPasados[i].price;
-        createCardDiv(pastCardImage, pastCardName, pastCardDescription, pastCardPrice);
-    }
 
-}
-addPastEvents();
