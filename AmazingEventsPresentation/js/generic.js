@@ -201,5 +201,3 @@ function createCardDiv(CardImage, CardName, CardDescription, CardPrice) {
     return cardDiv;
 }
 
-
-
