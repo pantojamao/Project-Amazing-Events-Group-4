@@ -157,49 +157,75 @@ const eventos = {
         }
     ]
 }
-const fechaActualTimestamp = new Date('2022-01-01').getTime();
+function createCardDiv(cardImage, cardName, cardDate, cardDescription, cardCategory, cardPlace, cardCapacity, cardAssistance, CardPrice){
+    //card general para details
+const container = document.createElement('div');
+const row = document.createElement('div');
+const col1 = document.createElement('div');
+const img1 = document.createElement('img');
+const col2 = document.createElement('div');
+const img2 = document.createElement('img');
+const containerText = document.createElement('div');
+const title = document.createElement('h2');
+const date = document.createElement('h6');
+const description = document.createElement('h6');
+const category = document.createElement('h6');
+const place = document.createElement('h6');
+const capacity = document.createElement('h6');
+const assistenceOrEstimate = document.createElement('h6');
+const price = document.createElement('h6');
 
-// Crear las etiquetas correspondientes de Events.html
-function createCardDiv(CardImage, CardName, CardDescription, CardPrice) {
-    const cardDiv = document.createElement('div');
-    const card = document.createElement('div');
-    const img = document.createElement('img');
-    const cardBody = document.createElement('div');
-    const title = document.createElement('h5');
-    const description = document.createElement('p');
-    const price = document.createElement('p');
-    const detailsLink = document.createElement('a');
+//agrega clases
+container.classList.add('container', 'd-flex', 'justify-content-center', 'mt-5', 'p-5');
+row.classList.add('row');
+col1.classList.add('col-md-6', 'd-flex', 'justify-content-center');
+img1.classList.add('img-fluid'- 'img-1' );
+col2 .classList.add('col-md-6', 'position-relative', 'd-flex', 'text-left' ,'justify-content-center');
+img2.classList.add('img-fluid');
+containerText.classList.add('position-absolute', 'top-1', 'start-2' ,'container-text');
+title.classList.add('card-title', 'title', 'text-center');
+date.classList.add('card-title', 'title');
+description.classList.add('card-title', 'title');
+category.classList.add('card-title', 'title');
+place.classList.add('card-title', 'title');
+capacity.classList.add('card-title', 'title');
+assistenceOrEstimate.classList.add('card-title', 'title');
+price.classList.add('card-title', 'title');
 
-    // Agregar las clases que tienen las etiquetas en el html principal
-    cardDiv.classList.add('card-body', 'd-flex', 'justify-content-around', 'pt-5', 'flex-wrap', 'mb-5');
-    card.classList.add('card');
-    img.classList.add('image-card', 'card-img-top', 'p-3', 'shadow');
-    cardBody.classList.add('card-body');
-    title.classList.add('card-title', 'text-center');
-    description.classList.add('card-text', 'w-80', 'p-1');
-    detailsLink.classList.add('btn', 'btn-primary', 'button-Shadow');
+// se agrego  los atributos que contenian las etiquetas en el html
+img1.alt = 'Imagen 1';
+img1.src = cardImage;
+img2.alt = 'Imagen 2';
+img2.src = '../assets/Images/imageDatails.png';
+title.textContent = cardName;
+date.textContent = 'DATE'+ cardDate;
+description.textContent = 'DESCRIPTION'+cardDescription;
+category.textContent = 'CATEGORY'+cardCategory;
+place.textContent = 'PLACE'+cardPlace;
+capacity.textContent = 'CAPACITY'+cardCapacity;
+assistenceOrEstimate.textContent = 'ASSISTENCE OR ESTIMATE'+cardAssistance;
+price.textContent = 'PRICE'+CardPrice;
 
-    // se agrego  los atributos que contenian las etiquetas en el html
-    card.style.width = "18rem";
-    img.src = CardImage;
-    img.alt = 'weddings';
-    title.textContent = CardName;
-    description.textContent = CardDescription;
-    price.textContent = `Price: ${CardPrice}`;
-    detailsLink.href = './details.html';
-    detailsLink.textContent = 'Details';
+//contenido de los atributos
+col1.appendChild(img1);
+containerText.appendChild(title);
+containerText.appendChild(date);
+containerText.appendChild(description);
+containerText.appendChild(category);
+containerText.appendChild(place);
+containerText.appendChild(capacity);
+containerText.appendChild(assistenceOrEstimate);
+containerText.appendChild(price);
+col2.appendChild(img2);
+col2.appendChild(containerText);
+row.appendChild(col1);
+row.appendChild(col2);
+container.appendChild(row);
 
-    // Construir la tarjeta de bodas
-    cardBody.appendChild(title);
-    cardBody.appendChild(description);
-    cardBody.appendChild(price);
-    cardBody.appendChild(detailsLink);
-    card.appendChild(img);
-    card.appendChild(cardBody);
-    cardDiv.appendChild(card);
+const cardContainer= document.getElementById("cardContainer");
+cardContainer.appendChild(container)
 
-    return cardDiv;
+
 }
-
-
-
+createCardDiv()
+console.log('createCardDiv');
