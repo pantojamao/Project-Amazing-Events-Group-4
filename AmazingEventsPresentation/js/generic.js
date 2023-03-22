@@ -157,10 +157,11 @@ const eventos = {
         }
     ]
 }
+
 const fechaActualTimestamp = new Date('2022-01-01').getTime();
 
 // Crear las etiquetas correspondientes de Events.html
-function createCardDiv(CardImage, CardName, CardDescription, CardPrice) {
+function createCardDiv(CardImage, CardName, CardDescription, CardPrice, cardDate, cardCategory, cardPlace, cardCapacity, cardAssistance) {
     const cardDiv = document.createElement('div');
     const card = document.createElement('div');
     const img = document.createElement('img');
@@ -178,6 +179,18 @@ function createCardDiv(CardImage, CardName, CardDescription, CardPrice) {
     title.classList.add('card-title', 'text-center');
     description.classList.add('card-text', 'w-80', 'p-1');
     detailsLink.classList.add('btn', 'btn-primary', 'button-Shadow');
+    detailsLink.addEventListener('click', () => { 
+        sessionStorage.setItem('imagen', JSON.stringify(CardImage));
+        sessionStorage.setItem('nombre', JSON.stringify(CardName));
+        sessionStorage.setItem('descripcion', JSON.stringify(CardDescription));
+        sessionStorage.setItem('precio', JSON.stringify(CardPrice));
+        sessionStorage.setItem('date', JSON.stringify(cardDate));
+        sessionStorage.setItem('category', JSON.stringify(cardCategory));
+        sessionStorage.setItem('place', JSON.stringify(cardPlace));
+        sessionStorage.setItem('capacity', JSON.stringify(cardCapacity));
+        sessionStorage.setItem('asistance', JSON.stringify(cardAssistance));
+        window.location.href = '../pages/details.html';
+    });
 
     // se agrego  los atributos que contenian las etiquetas en el html
     card.style.width = "18rem";
