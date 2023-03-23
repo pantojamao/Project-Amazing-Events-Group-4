@@ -10,7 +10,9 @@ function addPastEvents() {
         let CardName = eventosPasados[i].name;
         let CardDescription = eventosPasados[i].description;
         let CardPrice = eventosPasados[i].price;
-        const pastEventCard=createCardDiv(CardImage, CardName, CardDescription, CardPrice);
+        const pastEventCard=createCardDiv(CardImage, CardName, CardDescription, CardPrice,
+            eventos.eventos[i].date, eventos.eventos[i].category, eventos.eventos[i].place, eventos.eventos[i].capacity, 
+            eventos.eventos[i].assistance || eventos.eventos[i].estimate);
         slide.appendChild(pastEventCard);
         container.appendChild(slide);
     }
@@ -19,10 +21,9 @@ addPastEvents();
 
 var swiper = new Swiper(".slide-content", {
     slidesPerView: 4,
-    spaceBetween: 200,
+    spaceBetween: 100,
     slidesPerGroup: 4,
     loop: true,
-    // loopFillGroupWithBlank: true,
     centerSlide: 'true',
     fade: 'true',
     grabCursor: 'true',

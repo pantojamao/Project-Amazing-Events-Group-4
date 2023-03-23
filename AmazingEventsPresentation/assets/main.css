@@ -122,13 +122,13 @@
 }
 
 .title{
-    text-align: justify;
+    text-align: center;
     font-size: 14px;
 }
 
 .img-1{
-    width: 100%;
-    height: 100%;
+    width: 1920px;
+    height: 500px;
     border-left: 0px solid black;
     border-top: 0px solid black;
     box-shadow: -10px -5px 10px rgba(0, 0, 0, 0.5);
@@ -154,7 +154,7 @@
 
 /* Este div contiene todo el from*/
 .container-text h6{
-    color:white
+    color:black
 }
 
 /*==========================================================================================*/
